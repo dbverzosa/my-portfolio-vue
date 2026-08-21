@@ -1,0 +1,1009 @@
+
+/* =========================================
+   HERO
+========================================= */
+
+#home {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  padding: 100px 0 90px;
+  overflow: hidden;
+  background: #0a0f19;
+}
+
+/* =========================================
+   BACKGROUND GRID
+========================================= */
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(20, 184, 166, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(20, 184, 166, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 90%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 90%
+  );
+
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(55px);
+  }
+}
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0.5;
+}
+
+.hero-glow-one {
+  width: 450px;
+  height: 450px;
+  top: 5%;
+  left: -200px;
+  background: rgba(20, 184, 166, 0.08);
+
+  animation: glowFloatOne 8s ease-in-out infinite alternate;
+}
+
+.hero-glow-two {
+  width: 400px;
+  height: 400px;
+  right: -150px;
+  bottom: -100px;
+  background: rgba(20, 184, 166, 0.06);
+
+  animation: glowFloatTwo 10s ease-in-out infinite alternate;
+}
+
+@keyframes glowFloatOne {
+  to {
+    transform: translate(70px, 40px) scale(1.15);
+  }
+}
+
+@keyframes glowFloatTwo {
+  to {
+    transform: translate(-50px, -50px) scale(1.2);
+  }
+}
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+.hero-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #14b8a6;
+
+  box-shadow: 0 0 15px rgba(20, 184, 166, 0.7);
+
+  pointer-events: none;
+
+  animation: particleFloat 4s ease-in-out infinite;
+}
+
+.particle-one {
+  top: 20%;
+  left: 8%;
+}
+
+.particle-two {
+  top: 35%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.particle-three {
+  bottom: 20%;
+  left: 45%;
+  animation-delay: 2s;
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-15px) scale(1.5);
+  }
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 0.9fr);
+
+  align-items: center;
+  gap: 50px;
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+  min-width: 0;
+
+  animation:
+    heroContentIn 1s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+@keyframes heroContentIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================================
+   GREETING
+========================================= */
+
+.hero-greeting {
+  margin: 0 0 15px;
+  color: #14b8a6;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   NAME
+========================================= */
+
+.hero-content h1 {
+  margin: 0;
+  color: #ffffff;
+
+  font-size: clamp(58px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -5px;
+}
+
+.hero-content h1 span {
+  display: block;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 20%,
+    #14b8a6 90%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+/* =========================================
+   TYPEWRITER
+========================================= */
+
+.hero-title {
+  margin-top: 28px;
+  min-height: 42px;
+
+  color: #cbd5e1;
+  font-size: clamp(21px, 3vw, 29px);
+  font-weight: 500;
+}
+
+.hero-title-prefix {
+  color: #64748b;
+}
+
+.typewriter {
+  color: #14b8a6;
+  font-weight: 600;
+}
+
+.cursor {
+  color: #14b8a6;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 600px;
+  margin: 20px 0 22px;
+
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   ACHIEVEMENTS
+========================================= */
+
+.hero-achievements {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 28px;
+
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hero-achievements span:first-child {
+  color: #14b8a6;
+}
+
+.hero-achievements .dot {
+  color: #334155;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 13px 21px;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.primary-btn {
+  background: #14b8a6;
+  color: #06100e;
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px rgba(20, 184, 166, 0.2);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.primary-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.secondary-btn {
+  border: 1px solid rgba(20, 184, 166, 0.4);
+  color: #14b8a6;
+  background: rgba(20, 184, 166, 0.03);
+}
+
+.secondary-btn:hover {
+  transform: translateY(-4px);
+
+  border-color: #14b8a6;
+  background: rgba(20, 184, 166, 0.08);
+  color: #ffffff;
+}
+
+/* =========================================
+   SOCIALS
+========================================= */
+
+.hero-socials {
+  display: flex;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.hero-socials a {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.hero-socials a:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(20, 184, 166, 0.4);
+  color: #14b8a6;
+  background: rgba(20, 184, 166, 0.06);
+}
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.hero-visual {
+  position: relative;
+
+  width: min(450px, 100%);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation:
+    heroVisualIn 1.2s 0.2s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+@keyframes heroVisualIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* =========================================
+   ORBIT RINGS
+========================================= */
+
+.hero-orbit {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 82%;
+  height: 82%;
+
+  border: 1px dashed rgba(20, 184, 166, 0.18);
+
+  animation: ringRotate 20s linear infinite reverse;
+}
+
+.orbit-two {
+  width: 98%;
+  height: 98%;
+
+  border: 1px dashed rgba(255, 255, 255, 0.05);
+
+  animation: ringRotate 30s linear infinite;
+}
+
+@keyframes ringRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   ROLE ORBIT
+========================================= */
+
+.role-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 98%;
+  height: 98%;
+
+  pointer-events: none;
+
+  animation: roleOrbit 30s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes roleOrbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* =========================================
+   ORBITING ROLE LABELS
+========================================= */
+
+.orbit-role {
+  position: absolute;
+
+  width: max-content;
+  max-width: 145px;
+  padding: 8px 12px;
+
+  border: 1px solid rgba(20, 184, 166, 0.22);
+  border-radius: 8px;
+
+  background: rgba(10, 15, 25, 0.94);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: #8ee8df;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+
+  white-space: nowrap;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+  transform: translate(-50%, -50%);
+
+  animation: roleCounterRotate 30s linear infinite;
+}
+
+@keyframes roleCounterRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+/* =========================================
+   ROLE POSITIONS
+========================================= */
+
+.orbit-role-1 {
+  top: 3%;
+  left: 50%;
+}
+
+.orbit-role-2 {
+  top: 25%;
+  left: 96%;
+}
+
+.orbit-role-3 {
+  top: 75%;
+  left: 96%;
+}
+
+.orbit-role-4 {
+  top: 97%;
+  left: 50%;
+}
+
+.orbit-role-5 {
+  top: 75%;
+  left: 4%;
+}
+
+.orbit-role-6 {
+  top: 25%;
+  left: 4%;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.hero-profile {
+  position: relative;
+
+  width: 62%;
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
+
+  animation: profileFloat 5s ease-in-out infinite;
+}
+
+.hero-profile img {
+  position: relative;
+  z-index: 3;
+
+  width: 82%;
+  height: 82%;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  border: 3px solid rgba(20, 184, 166, 0.45);
+
+  box-shadow:
+    0 0 0 10px rgba(20, 184, 166, 0.035),
+    0 0 70px rgba(20, 184, 166, 0.15);
+}
+
+@keyframes profileFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* =========================================
+   PROFILE RING
+========================================= */
+
+.profile-ring {
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  border-radius: 50%;
+
+  animation: ringRotate 12s linear infinite;
+}
+
+.profile-ring::before {
+  content: '';
+
+  position: absolute;
+  top: -5px;
+  left: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #14b8a6;
+  box-shadow: 0 0 15px #14b8a6;
+}
+
+/* =========================================
+   FLOATING DOTS
+========================================= */
+
+.floating-dot {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #14b8a6;
+  box-shadow: 0 0 15px #14b8a6;
+
+  animation: dotPulse 2s ease-in-out infinite;
+}
+
+.dot-one {
+  top: 15%;
+  right: 12%;
+}
+
+.dot-two {
+  bottom: 15%;
+  left: 12%;
+  animation-delay: 1s;
+}
+
+@keyframes dotPulse {
+  50% {
+    opacity: 0.3;
+    transform: scale(1.8);
+  }
+}
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.scroll-indicator {
+  position: absolute;
+  z-index: 3;
+
+  bottom: 25px;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  transform: translateX(-50%);
+
+  color: #475569;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 35px;
+
+  background: linear-gradient(
+    to bottom,
+    #14b8a6,
+    transparent
+  );
+
+  animation: scrollLine 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleY(0.6);
+    transform-origin: top;
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* =========================================
+   LARGE TABLET / SURFACE
+========================================= */
+
+@media (max-width: 1000px) {
+  #home {
+    min-height: auto;
+    padding: 110px 0 100px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    max-width: 850px;
+    text-align: center;
+  }
+
+  .hero-content {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero-visual {
+    order: 1;
+    width: min(390px, 80vw);
+  }
+
+  .hero-description {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-achievements,
+  .hero-actions,
+  .hero-socials {
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(52px, 8vw, 72px);
+    letter-spacing: -4px;
+  }
+
+  .hero-title {
+    font-size: clamp(20px, 3vw, 27px);
+  }
+
+  .orbit-role {
+    max-width: 125px;
+    padding: 6px 8px;
+    font-size: 8px;
+  }
+}
+
+/* =========================================
+   TABLET LANDSCAPE / SMALL LAPTOP
+========================================= */
+
+@media (min-width: 851px) and (max-width: 1200px) {
+  .hero-container {
+    padding: 0 30px;
+    gap: 35px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(52px, 6vw, 70px);
+  }
+
+  .hero-visual {
+    width: min(400px, 42vw);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  #home {
+    padding: 90px 0;
+  }
+
+  .hero-container {
+    padding: 0 16px;
+    gap: 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 52px;
+    letter-spacing: -3px;
+  }
+
+  .hero-title {
+    min-height: 55px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .hero-actions a {
+    width: 100%;
+  }
+
+  .hero-visual {
+    width: min(310px, 90vw);
+    margin: 0 auto;
+  }
+
+  .hero-profile {
+    width: 68%;
+  }
+
+  .hero-profile img {
+    width: 82%;
+    height: 82%;
+  }
+
+  .orbit-role {
+    max-width: 105px;
+    padding: 5px 7px;
+    font-size: 7px;
+    border-radius: 6px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  }
+
+  .orbit-role-1 {
+    top: 4%;
+    left: 50%;
+  }
+
+  .orbit-role-2 {
+    top: 25%;
+    left: 94%;
+  }
+
+  .orbit-role-3 {
+    top: 75%;
+    left: 94%;
+  }
+
+  .orbit-role-4 {
+    top: 96%;
+    left: 50%;
+  }
+
+  .orbit-role-5 {
+    top: 75%;
+    left: 6%;
+  }
+
+  .orbit-role-6 {
+    top: 25%;
+    left: 6%;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  #home {
+    padding-top: 80px;
+  }
+
+  .hero-container {
+    padding: 0 12px;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 44px;
+    letter-spacing: -2.5px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+  }
+
+  .hero-visual {
+    width: min(270px, 90vw);
+  }
+
+  .orbit-role {
+    max-width: 90px;
+    padding: 4px 6px;
+    font-size: 6px;
+  }
+
+  .orbit-role-1 {
+    top: 5%;
+  }
+
+  .orbit-role-2 {
+    top: 25%;
+    left: 93%;
+  }
+
+  .orbit-role-3 {
+    top: 75%;
+    left: 93%;
+  }
+
+  .orbit-role-4 {
+    top: 95%;
+  }
+
+  .orbit-role-5 {
+    top: 75%;
+    left: 7%;
+  }
+
+  .orbit-role-6 {
+    top: 25%;
+    left: 7%;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-grid,
+  .hero-glow-one,
+  .hero-glow-two,
+  .hero-particle,
+  .hero-content,
+  .hero-visual,
+  .hero-orbit,
+  .role-orbit,
+  .orbit-role,
+  .profile-ring,
+  .hero-profile,
+  .floating-dot,
+  .scroll-line {
+    animation: none;
+  }
+}
+

@@ -1,0 +1,271 @@
+.about {
+  background: #0d1422;
+}
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  gap: 70px;
+
+  align-items: start;
+}
+
+.about-text {
+  max-width: 560px;
+}
+
+.about-text p {
+  margin: 0 0 20px;
+
+  color: #94a3b8;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.about-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 15px;
+
+  padding: 12px 20px;
+
+  border: 1px solid rgba(20, 184, 166, 0.5);
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #14b8a6;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-btn .arrow {
+  display: inline-block;
+
+  transition: transform 0.3s ease;
+}
+
+.about-btn:hover {
+  background: #14b8a6;
+
+  border-color: #14b8a6;
+
+  color: #06100e;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(20, 184, 166, 0.15);
+}
+
+.about-btn:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.about-cards {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.about-card {
+  position: relative;
+
+  min-height: 190px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Glow */
+
+.about-card::before {
+  content: '';
+
+  position: absolute;
+
+  width: 110px;
+  height: 110px;
+
+  right: -55px;
+  bottom: -55px;
+
+  border-radius: 50%;
+
+  background: rgba(20, 184, 166, 0.1);
+
+  filter: blur(20px);
+
+  transition: transform 0.4s ease;
+}
+
+/* Top line */
+
+.about-card::after {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #14b8a6;
+
+  transition: width 0.35s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(20, 184, 166, 0.3);
+
+  background: rgba(20, 184, 166, 0.04);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.about-card:hover::before {
+  transform: scale(2);
+}
+
+.about-card:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-number {
+  position: relative;
+
+  z-index: 1;
+
+  color: #14b8a6;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.about-card h3 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 15px 0 10px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  line-height: 1.3;
+}
+
+.about-card p {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .about-text {
+    max-width: 700px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card {
+    min-height: auto;
+
+    padding: 22px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+
+    line-height: 1.75;
+  }
+
+  .about-btn {
+    width: 100%;
+  }
+}

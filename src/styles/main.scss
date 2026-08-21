@@ -1,0 +1,627 @@
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+
+  background: #0a0f19;
+
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  background: #0a0f19;
+  color: #ffffff;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+#app {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: #0a0f19;
+  color: #ffffff;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+body::before {
+  content: '';
+
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  max-width: 100%;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(20, 184, 166, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(20, 184, 166, 0.05),
+      transparent 30%
+    );
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+  color: inherit;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+section {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  background: #0a0f19;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+  padding-top: 0;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   GLOBAL SECTION
+========================================= */
+
+.section {
+  width: 100%;
+  max-width: 100%;
+
+  padding: 120px 24px;
+
+  background: #0a0f19;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   SECTION CONTAINER
+========================================= */
+
+.section-container {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.section-heading {
+  width: 100%;
+  max-width: 650px;
+
+  margin-bottom: 60px;
+}
+
+.section-heading p {
+  margin: 0 0 10px;
+
+  color: #14b8a6;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(32px, 5vw, 48px);
+
+  line-height: 1.1;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =========================================
+   GLOBAL PARAGRAPHS
+========================================= */
+
+p {
+  color: #94a3b8;
+}
+
+
+/* =========================================
+   GLOBAL BUTTONS
+========================================= */
+
+.primary-btn,
+.secondary-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 22px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.primary-btn {
+  background: #14b8a6;
+
+  color: #06100e;
+}
+
+.primary-btn::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+    );
+
+  transition:
+    left 0.5s ease;
+}
+
+.primary-btn:hover::before {
+  left: 100%;
+}
+
+.primary-btn:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 10px 30px
+    rgba(20, 184, 166, 0.2),
+
+    0 0 20px
+    rgba(20, 184, 166, 0.1);
+}
+
+
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
+
+.secondary-btn {
+  border:
+    1px solid
+    rgba(20, 184, 166, 0.5);
+
+  color: #14b8a6;
+
+  background:
+    rgba(20, 184, 166, 0.03);
+}
+
+.secondary-btn:hover {
+  background:
+    rgba(20, 184, 166, 0.10);
+
+  border-color:
+    #14b8a6;
+
+  color:
+    #ffffff;
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+  background:
+    rgba(20, 184, 166, 0.3);
+
+  color:
+    #ffffff;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background:
+    #070b12;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    #183a38;
+
+  border-radius:
+    10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    #14b8a6;
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform:
+    translateY(60px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.reveal.is-visible {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================
+   REVEAL FROM LEFT
+========================================= */
+
+.reveal-left {
+  opacity: 0;
+
+  transform:
+    translateX(-60px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.reveal-left.is-visible {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================
+   REVEAL FROM RIGHT
+========================================= */
+
+.reveal-right {
+  opacity: 0;
+
+  transform:
+    translateX(60px);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.reveal-right.is-visible {
+  opacity: 1;
+
+  transform:
+    translateX(0);
+}
+
+
+/* =========================================
+   REVEAL SCALE
+========================================= */
+
+.reveal-scale {
+  opacity: 0;
+
+  transform:
+    scale(0.85);
+
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.reveal-scale.is-visible {
+  opacity: 1;
+
+  transform:
+    scale(1);
+}
+
+
+/* =========================================
+   STAGGER
+========================================= */
+
+.stagger > * {
+  opacity: 0;
+
+  transform:
+    translateY(30px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.stagger.is-visible > * {
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+.stagger.is-visible > *:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.stagger.is-visible > *:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.stagger.is-visible > *:nth-child(3) {
+  transition-delay: 0.25s;
+}
+
+.stagger.is-visible > *:nth-child(4) {
+  transition-delay: 0.35s;
+}
+
+.stagger.is-visible > *:nth-child(5) {
+  transition-delay: 0.45s;
+}
+
+.stagger.is-visible > *:nth-child(6) {
+  transition-delay: 0.55s;
+}
+
+.stagger.is-visible > *:nth-child(7) {
+  transition-delay: 0.65s;
+}
+
+.stagger.is-visible > *:nth-child(8) {
+  transition-delay: 0.75s;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .section {
+    padding:
+      90px 20px;
+  }
+
+  .section-heading {
+    margin-bottom:
+      40px;
+  }
+
+  .section-heading h2 {
+    font-size:
+      clamp(30px, 8vw, 40px);
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .section {
+    padding:
+      80px 16px;
+  }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .stagger > * {
+    opacity:
+      1;
+
+    transform:
+      none;
+
+    transition:
+      none;
+  }
+}
+

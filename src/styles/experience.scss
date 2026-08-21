@@ -1,0 +1,317 @@
+.experience {
+  background: #0d1422;
+}
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+  position: relative;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+}
+
+/* Timeline Line */
+
+.timeline::before {
+  content: '';
+
+  position: absolute;
+
+  left: 8px;
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20, 184, 166, 0),
+      rgba(20, 184, 166, 0.35) 10%,
+      rgba(20, 184, 166, 0.35) 90%,
+      rgba(20, 184, 166, 0)
+    );
+}
+
+/* =========================================
+   TIMELINE ITEM
+========================================= */
+
+.timeline-item {
+  position: relative;
+
+  padding-left: 50px;
+
+  padding-bottom: 45px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+/* =========================================
+   TIMELINE DOT
+========================================= */
+
+.timeline-dot {
+  position: absolute;
+
+  left: 0;
+
+  top: 5px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 17px;
+  height: 17px;
+
+  border: 4px solid #0d1422;
+
+  border-radius: 50%;
+
+  background: #14b8a6;
+
+  box-shadow:
+    0 0 0 1px #14b8a6,
+    0 0 15px rgba(20, 184, 166, 0.15);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.timeline-dot span {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  background: #14b8a6;
+}
+
+/* =========================================
+   TIMELINE CONTENT
+========================================= */
+
+.timeline-content {
+  position: relative;
+
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.timeline-content::before {
+  content: '';
+
+  position: absolute;
+
+  top: 20px;
+  left: -6px;
+
+  width: 10px;
+  height: 10px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: #111a29;
+
+  transform: rotate(45deg);
+}
+
+/* =========================================
+   HOVER
+========================================= */
+
+.timeline-item:hover .timeline-content {
+  transform: translateX(7px);
+
+  border-color: rgba(20, 184, 166, 0.3);
+
+  background: rgba(20, 184, 166, 0.025);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.25);
+
+  box-shadow:
+    0 0 0 5px rgba(20, 184, 166, 0.08),
+    0 0 20px rgba(20, 184, 166, 0.3);
+}
+
+/* =========================================
+   PERIOD
+========================================= */
+
+.timeline-year {
+  display: inline-block;
+
+  color: #14b8a6;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+}
+
+/* =========================================
+   ROLE
+========================================= */
+
+.timeline-content h3 {
+  margin: 10px 0 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  line-height: 1.3;
+}
+
+/* =========================================
+   COMPANY
+========================================= */
+
+.timeline-content h4 {
+  margin: 7px 0 0;
+
+  color: #cbd5e1;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.timeline-location {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.timeline-content ul {
+  margin: 22px 0 0;
+
+  padding-left: 20px;
+}
+
+.timeline-content li {
+  margin-bottom: 10px;
+
+  color: #94a3b8;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.timeline-content li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-content li::marker {
+  color: #14b8a6;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 700px) {
+  .timeline-content {
+    padding: 25px;
+  }
+
+  .timeline-content h3 {
+    font-size: 22px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .timeline {
+    margin-left: 0;
+  }
+
+  .timeline::before {
+    left: 6px;
+  }
+
+  .timeline-item {
+    padding-left: 35px;
+
+    padding-bottom: 35px;
+  }
+
+  .timeline-dot {
+    left: -2px;
+
+    width: 17px;
+    height: 17px;
+  }
+
+  .timeline-content {
+    padding: 22px;
+  }
+
+  .timeline-content::before {
+    display: none;
+  }
+
+  .timeline-content h3 {
+    font-size: 20px;
+  }
+
+  .timeline-content h4 {
+    font-size: 14px;
+  }
+
+  .timeline-content li {
+    font-size: 13px;
+
+    line-height: 1.65;
+  }
+
+  .timeline-item:hover .timeline-content {
+    transform: translateY(-4px);
+  }
+}

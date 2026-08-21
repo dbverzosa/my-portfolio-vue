@@ -1,0 +1,207 @@
+.education {
+  background: #0a0f19;
+}
+
+.education-list {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+/* =========================================
+   EDUCATION CARD
+========================================= */
+
+.education-card {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 160px 1fr;
+
+  gap: 30px;
+
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 12px;
+
+  background: #0d1422;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+/* Accent line */
+
+.education-card::before {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 2px;
+  height: 100%;
+
+  background: #14b8a6;
+
+  transform: scaleY(0);
+
+  transform-origin: bottom;
+
+  transition: transform 0.4s ease;
+}
+
+.education-card:hover {
+  transform: translateX(8px);
+
+  border-color: rgba(20, 184, 166, 0.3);
+
+  background: rgba(20, 184, 166, 0.025);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    0 0 25px rgba(20, 184, 166, 0.03);
+}
+
+.education-card:hover::before {
+  transform: scaleY(1);
+}
+
+/* =========================================
+   YEAR
+========================================= */
+
+.education-year {
+  color: #14b8a6;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   EDUCATION CONTENT
+========================================= */
+
+.education-content {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+/* Degree */
+
+.education-content h3 {
+  margin: 0 0 8px;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+
+  transition: color 0.3s ease;
+}
+
+.education-card:hover .education-content h3 {
+  color: #14b8a6;
+}
+
+/* School */
+
+.education-content h4 {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   ACHIEVEMENT
+========================================= */
+
+.education-achievement {
+  display: inline-block;
+
+  margin-top: 16px;
+
+  padding: 6px 10px;
+
+  border: 1px solid rgba(20, 184, 166, 0.15);
+
+  border-radius: 5px;
+
+  background: rgba(20, 184, 166, 0.08);
+
+  color: #14b8a6;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.education-card:hover .education-achievement {
+  background: rgba(20, 184, 166, 0.13);
+
+  border-color: rgba(20, 184, 166, 0.3);
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .education-card {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    padding: 24px;
+  }
+
+  .education-year {
+    font-size: 12px;
+  }
+
+  .education-content h3 {
+    font-size: 18px;
+  }
+
+  .education-content h4 {
+    font-size: 13px;
+  }
+}
