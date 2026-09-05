@@ -65,14 +65,18 @@ onUnmounted(() => {
            LOGO
       ========================================== -->
 
-      <a
-        href="#home"
-        class="logo"
-        aria-label="Go to home"
-        @click="closeMenu"
-      >
-        <span class="logo-mark">DB</span>
-      </a>
+    <a
+      href="#home"
+      class="logo"
+      aria-label="Go to home"
+      @click="closeMenu"
+    >
+      <img
+        src="/logo.png"
+        alt="DB Logo"
+        class="logo-mark"
+      />
+    </a>
 
 
       <!-- =========================================

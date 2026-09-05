@@ -13,11 +13,14 @@ const currentYear = new Date().getFullYear()
           class="logo-mark"
           aria-label="Back to home"
         >
-          DB
+          <img
+            src="/logo.png"
+            alt="DB Logo"
+          />
         </a>
 
         <div class="footer-identity">
-        <!-- <strong>Debby Verzosa </strong> -->
+          <!-- <strong>Debby Verzosa</strong> -->
         </div>
       </div>
 
@@ -107,31 +110,34 @@ const currentYear = new Date().getFullYear()
   width: 38px;
   height: 38px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
 
-  border-radius: 9px;
-
-  background: #14b8a6;
-
-  color: #ffffff;
+  flex-shrink: 0;
 
   text-decoration: none;
 
-  font-size: 12px;
-  font-weight: 800;
-
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    filter 0.3s ease;
+}
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
 }
 
 .logo-mark:hover {
   transform: rotate(-8deg) scale(1.08);
 
-  box-shadow:
-    0 0 20px rgba(20, 184, 166, 0.3);
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(20, 184, 166, 0.35)
+    );
 }
 
 /* Identity */
@@ -260,6 +266,16 @@ const currentYear = new Date().getFullYear()
     flex-direction: column;
 
     gap: 8px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-mark,
+  .back-to-top,
+  .back-to-top .arrow {
+    transition: none;
   }
 }
 </style>
