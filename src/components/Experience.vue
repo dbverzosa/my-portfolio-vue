@@ -5,7 +5,7 @@ useScrollReveal()
 
 const experiences = [
   {
-    period: 'August 2024 — September 2025',
+    period: 'August 2024 — August 2025',
     role: 'Lecturer',
     company: 'Caraga State University - Main Campus',
     location: 'Butuan City',
