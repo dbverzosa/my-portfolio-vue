@@ -159,7 +159,7 @@ onUnmounted(() => {
         <!-- Mobile Resume -->
 
         <a
-          href="/resume/DBVerzosaResume.pdf"
+          href="/resume/Debby Verzosa - Resume.pdf"
           class="mobile-resume-btn"
           target="_blank"
           rel="noopener noreferrer"
